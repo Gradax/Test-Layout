@@ -175,6 +175,14 @@ body {
   top: 164px;
   left: 125px;
 }
+.main-header-wrp-leftslider:hover {
+  outline: 2px solid green;
+  color: green;
+}
+.main-header-wrp-leftslider:active {
+  outline: 2px solid red;
+  color: red;
+}
 .main-header-wrp-portfolio {
   width: 600px;
   /*display: flex;
@@ -234,6 +242,14 @@ body {
   line-height: 23px;
   font-weight: 800;
 }
+.main-header-wrp-portfolio-btn:hover {
+  outline: 2px solid green;
+  color: green;
+}
+.main-header-wrp-portfolio-btn:active {
+  outline: 2px solid red;
+  color: red;
+}
 .main-header-wrp-rightslider {
   width: 52px;
   height: 52px;
@@ -244,6 +260,14 @@ body {
   position: absolute;
   top: 164px;
   left: 1664px;
+}
+.main-header-wrp-rightslider:hover {
+  outline: 2px solid green;
+  color: green;
+}
+.main-header-wrp-rightslider:active {
+  outline: 2px solid red;
+  color: red;
 }
 .main-header-pagination {
   width: 100px;
@@ -262,6 +286,14 @@ body {
   opacity: 0.5;
   background-color: #ffffff;
   border-radius: 50%;
+}
+.main-header-pagination-links:hover {
+  outline: 2px solid green;
+  color: green;
+}
+.main-header-pagination-links:active {
+  outline: 2px solid red;
+  color: red;
 }
 .main-header-pagination .pagination-active {
   width: 15px;
