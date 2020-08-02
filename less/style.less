@@ -103,7 +103,15 @@ body {
         box-sizing: border-box;
         margin: 10px 0 0 57px;
 
-        &-img {}
+        &-img {
+            &:hover {
+                .hv();
+            }
+
+            &:active {
+                .act();
+            }
+        }
     }
 
     &-search {
@@ -176,11 +184,13 @@ body {
             left: 125px;
 
             &:hover {
-                .hv();
+                border-top: 2px solid green;
+                border-right: 2px solid green;
             }
 
             &:active {
-                .act();
+                border-top: 2px solid red;
+                border-right: 2px solid red;
             }
         }
 
@@ -269,11 +279,13 @@ body {
             left: 1664px;
 
             &:hover {
-                .hv();
+                border-top: 2px solid green;
+                border-right: 2px solid green;
             }
 
             &:active {
-                .act();
+                border-top: 2px solid red;
+                border-right: 2px solid red;
             }
         }
     }

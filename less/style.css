@@ -113,6 +113,14 @@ body {
   box-sizing: border-box;
   margin: 10px 0 0 57px;
 }
+.main-header-trash-img:hover {
+  outline: 2px solid green;
+  color: green;
+}
+.main-header-trash-img:active {
+  outline: 2px solid red;
+  color: red;
+}
 .main-header-search {
   width: 24px;
   height: 24px;
@@ -176,12 +184,12 @@ body {
   left: 125px;
 }
 .main-header-wrp-leftslider:hover {
-  outline: 2px solid green;
-  color: green;
+  border-top: 2px solid green;
+  border-right: 2px solid green;
 }
 .main-header-wrp-leftslider:active {
-  outline: 2px solid red;
-  color: red;
+  border-top: 2px solid red;
+  border-right: 2px solid red;
 }
 .main-header-wrp-portfolio {
   width: 600px;
@@ -262,12 +270,12 @@ body {
   left: 1664px;
 }
 .main-header-wrp-rightslider:hover {
-  outline: 2px solid green;
-  color: green;
+  border-top: 2px solid green;
+  border-right: 2px solid green;
 }
 .main-header-wrp-rightslider:active {
-  outline: 2px solid red;
-  color: red;
+  border-top: 2px solid red;
+  border-right: 2px solid red;
 }
 .main-header-pagination {
   width: 100px;
