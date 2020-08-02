@@ -1,42 +1,288 @@
-.main-header {
-    &-logo {
-        &-icon {}
+.hv() {
+    outline: 2px solid green;
+    color: green;
+}
 
-        &-txt {}
+.act() {
+    outline: 2px solid red;
+    color: red;
+}
+
+@import url("fonts.less");
+
+body {
+    margin: 0 auto;
+    /* не работает центрирование тут, не пойму, почему...*/
+    font-family: Raleway, sans-serif;
+    font-family: Roboto, sans-serif;
+    font-family: Montserrat, sans-serif;
+}
+
+.main-header {
+    padding: 40px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 1920px;
+    height: 1024px;
+    background-color: rgba(17, 17, 17, 0.7);
+    background-image: url(../img/bg.jpg);
+    display: flex;
+    flex-wrap: wrap;
+
+    &-logo {
+        margin: 0 0 0 335px;
+        display: flex;
+        justify-content: space-between;
+        width: 181px;
+        height: 56px;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+
+        &-icon {
+            fill: currentColor;
+        }
+
+        &-txt {
+            display: block;
+            font-family: Raleway;
+            font-size: 34px;
+            line-height: 1.2;
+            font-weight: 400;
+            letter-spacing: -0.04em;
+        }
+
+        &:hover {
+            .hv();
+        }
+
+        &:active {
+            .act();
+        }
     }
 
     &-menu {
-        &-links {}
+        display: block;
+        margin: 14px 0 0 195px;
+        height: 50px;
+
+
+        &-links {
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 300;
+            color: #ffffff;
+            margin: 0 0 0 24px;
+            text-decoration: none;
+
+            &:hover {
+                .hv();
+            }
+
+            &:active {
+                .act();
+            }
+        }
+
+        .link-active {
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 300;
+            color: #c7b299;
+        }
     }
 
     &-trash {
+        width: 18px;
+        height: 24px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+        margin: 10px 0 0 57px;
+
         &-img {}
     }
 
     &-search {
-        &-img {}
+        width: 24px;
+        height: 24px;
+        position: relative;
+        margin: 10px 0 0 32px;
+
+        &-input {
+            width: 0;
+            min-height: 0;
+            padding: 5px;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+            background-color: transparent;
+            position: absolute;
+            top: 0px;
+            left: 30px;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 14px;
+            text-transform: capitalize;
+
+            &:focus {
+                min-width: 250px;
+                height: 20px;
+                transition: width 1s ease;
+                border: 2px solid #fff;
+            }
+        }
+
+        &-label {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            &:hover .main-header-search-label-img {
+                fill: green;
+            }
+
+            &:active .main-header-search-label-img {
+                fill: red;
+            }
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                fill: #fff;
+            }
+        }
     }
 
     &-wrp {
-        &-leftslider {}
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 0 0;
+        position: relative;
 
-        &-portfolio {
-            &-firsttitle {}
-
-            &-secondtitle {}
-
-            &-txt {}
-
-            &-btn {}
-
+        &-leftslider {
+            width: 52px;
+            height: 52px;
+            opacity: 0.5;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(225deg);
+            position: absolute;
+            top: 164px;
+            left: 125px;
         }
 
-        &-rightslider {}
+        &-portfolio {
+            width: 600px;
+            /*display: flex;
+            flex-wrap: wrap;
+            justify-content: center;*/
+            /*флексы расплющивают по высоте строку почему-то, и ни принудительной блочной высотой, ни высотой строки не регулируются*/
 
-        &-pagination {
-            &-links {}
+            &-firsttitle {
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-family: Raleway;
+                font-size: 36px;
+                font-weight: 500;
+                color: #ffffff;
+                margin: 50px 0 0 0;
+                line-height: 1.2;
 
-            .pagination-active {}
+            }
+
+            &-secondtitle {
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-family: Raleway;
+                /*пришлось скачать со сквирели, ибо гугловский с вариабельной толщиной не желал корректно отображаться*/
+                font-size: 52px;
+                font-weight: 800;
+                color: #ffffff;
+                line-height: 1.2;
+            }
+
+            &-txt {
+                text-align: center;
+                font-family: Montserrat;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 300;
+                color: #ffffff;
+            }
+
+            &-btn {
+                display: block;
+                margin: 0 auto;
+                margin-top: 50px;
+                /*margin-top: 45px;*/
+                width: 170px;
+                padding: 15px 0 15px 0;
+                background-color: #998675;
+                border-radius: 3px;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                color: #fff;
+                border: none;
+                border-bottom: 2px solid #736357;
+                /*Marsy не показывает эту нижнюю рамку*/
+                box-sizing: border-box;
+                font-family: Raleway;
+                font-size: 14px;
+                line-height: 23px;
+                font-weight: 800;
+            }
+        }
+
+        &-rightslider {
+            width: 52px;
+            height: 52px;
+            opacity: 0.5;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 164px;
+            left: 1664px;
+        }
+    }
+
+
+
+    &-pagination {
+        width: 100px;
+        height: 11px;
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 79px;
+        left:2px;
+
+        &-links {
+            width: 11px;
+            height: 11px;
+            opacity: 0.5;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .pagination-active {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #d3c1ad;
+            background-color: transparent;
+            border-radius: 50%;
+            box-sizing: border-box;
+
         }
     }
 }
