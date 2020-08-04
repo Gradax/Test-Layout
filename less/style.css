@@ -112,6 +112,10 @@ body {
   border: none;
   box-sizing: border-box;
   margin: 10px 0 0 57px;
+  fill: #fff;
+}
+.main-header-trash-img {
+  fill: #fff;
 }
 .main-header-trash-img:hover {
   outline: 2px solid green;
@@ -287,27 +291,32 @@ body {
   position: relative;
   top: 79px;
   left: 2px;
+  /* Активная страница помечается?
+        .pagination-active {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #d3c1ad;
+            background-color: transparent;
+            border-radius: 50%;
+            box-sizing: border-box; */
 }
 .main-header-pagination-links {
+  display: block;
   width: 11px;
   height: 11px;
   opacity: 0.5;
   background-color: #ffffff;
   border-radius: 50%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 .main-header-pagination-links:hover {
-  outline: 2px solid green;
-  color: green;
+  transform: scale(1.4);
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+  box-sizing: border-box;
 }
 .main-header-pagination-links:active {
   outline: 2px solid red;
   color: red;
-}
-.main-header-pagination .pagination-active {
-  width: 15px;
-  height: 15px;
-  border: 2px solid #d3c1ad;
-  background-color: transparent;
-  border-radius: 50%;
-  box-sizing: border-box;
 }

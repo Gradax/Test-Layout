@@ -102,8 +102,11 @@ body {
         border: none;
         box-sizing: border-box;
         margin: 10px 0 0 57px;
+        fill: #fff;
 
         &-img {
+            fill: #fff;
+
             &:hover {
                 .hv();
             }
@@ -304,14 +307,20 @@ body {
         left: 2px;
 
         &-links {
+            display: block;
             width: 11px;
             height: 11px;
             opacity: 0.5;
             background-color: #ffffff;
             border-radius: 50%;
+            border: 2px solid transparent;
+            box-sizing: border-box;
 
             &:hover {
-                .hv();
+                transform: scale(1.4);
+                background-color: transparent;
+                border: 2px solid #d3c1ad;
+                box-sizing: border-box;
             }
 
             &:active {
@@ -319,14 +328,14 @@ body {
             }
         }
 
+        /* Активная страница помечается?
         .pagination-active {
             width: 15px;
             height: 15px;
             border: 2px solid #d3c1ad;
             background-color: transparent;
             border-radius: 50%;
-            box-sizing: border-box;
+            box-sizing: border-box; */
 
-        }
     }
 }
