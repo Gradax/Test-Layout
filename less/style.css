@@ -642,26 +642,34 @@ body {
   color: green;
 }
 .video {
-  position: absolute;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .video-wrp {
   width: 560px;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
 }
 .video-wrp-button {
+  margin: 0 auto;
   border: none;
   width: 100px;
   height: 100px;
   opacity: 0.2;
   background-color: #000000;
   border-radius: 50%;
+  display: block;
+  outline: none;
 }
 .video-wrp-button-svg {
   fill: #fff;
+  opacity: 1;
 }
 .video-wrp-title {
+  display: block;
+  text-align: center;
   font-family: Raleway;
   font-size: 30px;
   line-height: 1.2;
@@ -669,6 +677,7 @@ body {
   color: #ffffff;
 }
 .video-wrp-txt {
+  text-align: center;
   font-family: Montserrat;
   font-size: 16px;
   line-height: 28px;
@@ -676,6 +685,8 @@ body {
   color: #ffffff;
 }
 .video-wrp-time {
+  display: block;
+  text-align: center;
   font-family: Montserrat;
   font-size: 14px;
   line-height: 24px;
