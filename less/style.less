@@ -27,6 +27,10 @@ body {
     display: flex;
     flex-wrap: wrap;
 
+    #main-header-menu-mobile {
+        opacity: 0;
+    }
+
     &-logo {
         margin: 0 0 0 335px;
         display: flex;
@@ -61,7 +65,7 @@ body {
 
     &-menu {
         display: block;
-        margin: 14px 0 0 195px;
+        margin: -3px 0 0 195px;
         height: 50px;
 
 
@@ -75,20 +79,16 @@ body {
             text-decoration: none;
 
             &:hover {
-                .hv();
+                font-family: Montserrat;
+                font-size: 14px;
+                line-height: 1.2;
+                font-weight: 300;
+                color: #c7b299;
             }
 
             &:active {
                 .act();
             }
-        }
-
-        .link-active {
-            font-family: Montserrat;
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 300;
-            color: #c7b299;
         }
     }
 
@@ -120,6 +120,7 @@ body {
         height: 24px;
         position: relative;
         margin: 10px 0 0 32px;
+        z-index: 1;
 
         &-input {
             width: 0;
@@ -317,15 +318,6 @@ body {
                 .act();
             }
         }
-
-        /* Активная страница на пагинации помечается?
-        .pagination-active {
-            width: 15px;
-            height: 15px;
-            border: 2px solid #d3c1ad;
-            background-color: transparent;
-            border-radius: 50%;
-            box-sizing: border-box; */
     }
 }
 
@@ -1296,17 +1288,128 @@ body {
     }
 
     .main-header {
-        display: none;
+        background-size: cover;
+        height: 140px;
+        padding: 5%;
+        flex-wrap: nowrap;
+        flex-flow: wrap;
+
+        &-logo {
+            margin: 4% 0;
+        }
+
+        &-menu {
+            order: 3;
+
+            &-mobile-btn {
+                display: flex;
+                align-items: center;
+                position: fixed;
+                top: 55px;
+                right: 10%;
+                width: 30px;
+                height: 26px;
+                cursor: pointer;
+                z-index: 5;
+
+                & > span,
+                & > span::before,
+                & > span::after {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                }
+
+                & > span::before {
+                    content: '';
+                    top: -8px;
+                }
+
+                & > span::after {
+                    content: '';
+                    top: 8px;
+                }
+            }
+
+            &-wrp {
+                display: block;
+                position: fixed;
+                visibility: hidden;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 35%;
+                margin: 0;
+                padding: 7% 0;
+                text-align: center;
+                background-color: #1f1e23;
+                box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+                z-index: 2;
+            }
+
+            &-links {
+                display: block;
+                padding: 12px 24px;
+            }
+
+            #main-header-menu-mobile:checked ~ .main-header-menu-mobile-btn > span {
+                transform: rotate(45deg);
+            }
+
+            #main-header-menu-mobile:checked ~ .main-header-menu-mobile-btn > span::before {
+                top: 0;
+                transform: rotate(0);
+            }
+
+            #main-header-menu-mobile:checked ~ .main-header-menu-mobile-btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            #main-header-menu-mobile:checked ~ .main-header-menu-wrp {
+                visibility: visible;
+                right: 0;
+            }
+
+        }
+
+        &-wrp {
+            display: none;
+        }
+
+        &-pagination {
+            display: none;
+        }
+
+        &-trash {
+            margin: 7% 5%;
+            order: 1;
+        }
+
+        &-search {
+            margin: 7% 5%;
+            order: 2;
+
+            &-input {
+                top: 50px;
+                left: -150px;
+
+                &:focus {
+                    width: 150px;
+                }
+            }
+        }
     }
 
     .benefits {
-        display: none;
         flex-wrap: wrap;
         padding: 5%;
         box-sizing: border-box;
 
         &-item {
-            width: 25%;
+            width: 40%;
             padding: 2% 2%;
         }
     }
@@ -1320,7 +1423,6 @@ body {
     }
 
     .projects {
-        display: none;
         padding: 2%;
 
         &-txt {
@@ -1333,6 +1435,25 @@ body {
                 margin: 2%;
             }
         }
+
+        &-item {
+            width: 90%;
+            margin: 5%;
+
+            & img {
+                width: 100%;
+                min-height: 80%;
+
+            }
+
+            &-wrptxt {
+                position: relative;
+
+                &:before {
+                    top: -50px;
+                }
+            }
+        }
     }
 
     .video {
@@ -1340,7 +1461,32 @@ body {
     }
 
     .mobile {
-        display: none;
+        margin: 2%;
+        background-image: url(../img/iPhone.jpg);
+        background-repeat: no-repeat;
+        background-size: 34% 615*34/420%;
+        background-position: bottom left;
+
+        & img {
+            display: none;
+        }
+
+        &-title {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 5%;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        &-txt {
+            width: 90%;
+        }
+
+        &-list {
+            list-style: none;
+            margin: 0 0 0 24%;
+        }
     }
 
     .statistic {
@@ -1348,18 +1494,60 @@ body {
     }
 
     .posts {
-        display: none;
+        padding: 2%;
+
+        &-title {
+            margin: 3%;
+        }
+
+        &-txt {
+            margin: 2%;
+        }
+
+        &-card {
+            width: 80%;
+            margin: 1%;
+        }
+
+        &-slider {
+            margin: 5%;
+        }
     }
 
     .logos {
-        display: none;
+        padding: 2%;
+        flex-wrap: wrap;
+
+        &-link {
+            display: block;
+            margin: 5%;
+            width: 35%;
+
+            & img {
+                width: 100%;
+                min-height: 20%;
+            }
+        }
     }
+
 
     .footer {
         display: none;
     }
 
     .footer-copyright {
-        display: none;
+        padding: 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-left {
+            width: 95%;
+        }
+
+        &-right {
+            width: 76%;
+            margin: 5% 0 0 0;
+        }
+
     }
 }

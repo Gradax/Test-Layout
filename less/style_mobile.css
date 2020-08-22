@@ -1140,11 +1140,3 @@ body {
   border-right: 1px solid #252525;
   padding: 0 6px 0 6px;
 }
-@media (max-width: 480px) {
-  body {
-    width: 100%;
-  }
-  .main-header {
-    display: none;
-  }
-}
